@@ -9,13 +9,13 @@ const apptool = (state = INITIAL_STATE, action) => {
     case APPEND_APP_TOOL:
       return {
         ...state,
-        tools: [...state, action.tool]
+        tools: [...state.tools, action.tool]
       }
 
     case REMOVE_APP_TOOL:
       return {
         ...state,
-        tools: state.filter(i => i !== action.tool)
+        tools: state.tools.filter(tool => tool !== action.tool)
       }
 
     default:
